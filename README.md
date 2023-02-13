@@ -1,5 +1,5 @@
 # library
-A Library from MDN tutorial
+A Library from MDN tutorial improved by me :) 
 
 to run:
 - clone the project;
