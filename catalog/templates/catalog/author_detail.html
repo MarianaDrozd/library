@@ -3,6 +3,7 @@
 {% block content %}
 
 <h1>Author: {{ author }} </h1>
+<a href="{% url 'author-update' author.pk %}">Edit</a>
 <p>{% if author.date_of_birth %}{{author.date_of_birth}} - {% if author.date_of_death %}{{author.date_of_death}}{% else %}Present{% endif %}{% endif %}</p>
 
 <div style="margin-left:20px;margin-top:20px">
