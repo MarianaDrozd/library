@@ -1,16 +1,39 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-  <h1>Local Library Home</h1>
-  <p>Welcome to LocalLibrary, a website developed by <em>Mozilla Developer Network</em>!</p>
-  <h2>Dynamic content</h2>
-  <p>The library has the following record counts:</p>
-  <ul>
-    <li><strong>Books:</strong> {{ num_books }}</li>
-    <li><strong>Copies:</strong> {{ num_instances }}</li>
-    <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
-    <li><strong>Authors:</strong> {{ num_authors }}</li>
-  </ul>
-    <p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
+
+    <h1 class="welcome" align="center">Welcome to our library!</h1>
+    <div class="image1">
+        <img src="/static/images/book-1.png" width="600px" height="400px">
+    </div><p></p>
+    <div class="text1">
+        <p>
+            <h3>Our goal is to provide you with access to the latest and greatest books, resources, and information. Whether you're a student, a researcher, or simply someone who loves to read, you'll find something to interest you here.
+
+Our library is home to an extensive collection of books, covering a wide range of topics, from fiction to non-fiction, from classics to contemporary works.
+
+But our library is more than just a collection of books. It's a place where you can learn new things, and discover new ideas. Whether you're simply browsing our shelves, you're sure to find something that inspires you.
+
+So come visit us today and see all that our library has to offer. We're looking forward to seeing you!
+            </h3>
+        </p>
+        </div>
+    </div>
+    <div class="image2">
+        <img src="/static/images/book-2.png" width="250px" height="250px">
+    </div>
+    <div class="text2">
+<h4>
+      <p>The library has the following record counts:</p>
+      <dl>
+        <dt><strong>Books:</strong> {{ num_books }}</dt>
+        <dt><strong>Copies:</strong> {{ num_instances }}</dt>
+        <dt><strong>Copies available:</strong> {{ num_instances_available }}</dt>
+        <dt><strong>Authors:</strong> {{ num_authors }}</dt>
+
+      </dl>
+        <p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
+</h4>
+    </div>
 
 {% endblock %}
