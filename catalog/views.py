@@ -8,11 +8,9 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
-from catalog.forms import RenewBookForm
+from catalog.forms import RenewBookForm, AuthorForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-
-from catalog.models import Author
 
 
 def index(request):
@@ -111,16 +109,18 @@ def renew_book_librarian(request, pk):
 
 
 class AuthorCreate(PermissionRequiredMixin, CreateView):
-    model = Author
-    fields = ['first_name', 'last_name', 'date_of_birth', 'date_of_death']
-    initial = {'date_of_death': '11/06/2020'}
+    form_class = AuthorForm
+    template_name = 'catalog/author_form.html'
     permission_required = 'catalog.can_mark_returned'
+    success_url = reverse_lazy('author-create')
 
 
 class AuthorUpdate(PermissionRequiredMixin, UpdateView):
     model = Author
-    fields = '__all__'  # Not recommended (potential security issue if more fields added)
+    form_class = AuthorForm
+    template_name = 'catalog/author_form.html'
     permission_required = 'catalog.can_mark_returned'
+    success_url = reverse_lazy('authors')
 
 
 class AuthorDelete(PermissionRequiredMixin, DeleteView):
@@ -132,6 +132,7 @@ class AuthorDelete(PermissionRequiredMixin, DeleteView):
 class BookCreate(PermissionRequiredMixin, CreateView):
     model = Book
     fields = ['title', 'author', 'summary', 'isbn', 'genre', 'language']
+    success_url = reverse_lazy('books')
     permission_required = 'catalog.can_mark_returned'
 
 

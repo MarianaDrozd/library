@@ -124,16 +124,17 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Europe/Kyiv'
 
 USE_I18N = True
+USE_L10N = False
 
 USE_TZ = True
 
-
+DATE_FORMAT = 'd.m.Y'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
 
-SITE_ID = 2
+SITE_ID = 1
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {

@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 from django.forms import ModelForm
 
-from catalog.models import BookInstance
+from catalog.models import BookInstance, Author
 
 
 class RenewBookForm(forms.Form):
@@ -47,3 +47,28 @@ class RenewBookModelForm(ModelForm):
         fields = ['due_back']
         labels = {'due_back': _('Renewal date')}
         help_texts = {'due_back': _('Enter a date between now and 4 weeks (default 3).')}
+
+
+class AuthorForm(ModelForm):
+
+    first_name = forms.CharField(max_length=100)
+    last_name = forms.CharField(max_length=100)
+    date_of_birth = forms.DateField(
+        widget=forms.DateInput(
+            format='%d.%m.%Y',
+            attrs={'placeholder': 'dd.mm.yyyy'}
+        ),
+        input_formats=["%d.%m.%Y"],
+        required=False
+    )
+    date_of_death = forms.DateField(
+        widget=forms.DateInput(
+            attrs={'placeholder': 'dd.mm.yyyy (If alive - leave empty)'}
+        ),
+        input_formats=['%d.%m.%Y'],
+        required=False
+    )
+
+    class Meta:
+        model = Author
+        fields = ['first_name', 'last_name', 'date_of_birth', 'date_of_death']
