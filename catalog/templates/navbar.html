@@ -35,7 +35,11 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="{% url 'my-borrowed' %}">My Borrowed</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+              {% if user.is_staff %}
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="{% url 'author-create' %}">+ Add author</a></li>
+                  <li><a class="dropdown-item" href="{% url 'book-create' %}">+ Add book</a></li>
+              {% endif %}
             <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="{% url 'account_logout' %}?next={{ request.path }}">Logout</a></li>
           </ul>

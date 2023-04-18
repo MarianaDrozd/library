@@ -8,15 +8,19 @@
 }
 .nav-link {
   font-size: 50px;
-  color: #bc95e2;
-  font-family: "Sofia", sans-serif;
+  color: black;
+  font-family: "Shantell Sans", sans-serif;
   text-shadow: 2px 2px 2px #ababab
 }
 
+.main {
+  margin-left: 20%;
+  margin-right: 20%;
+}
 .user-nav {
   font-size: 50px;
 }
-.nav-link:hover { color: #9942ed; }
+.nav-link:hover { color: dimgrey; }
 
 .dropdown {
   position: relative;
@@ -24,9 +28,60 @@
 }
 .container-fluid-base {
   background-color: cornsilk;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .justify-content {
   color: #bc95e2;
 }
 
+.container-fluid-base-footer{
+  background-color: #f1ab41;
+  font-family: "Sofia", sans-serif;
+  font-size: 20px;
+  color: black;
+}
+.container-fluid-base-footer.a:hover {
+  color: #9942ed;
+}
+.text {
+  color: black;
+}
+.text:hover, .list:hover {
+  color: dimgrey;
+}
+
+.image1 {
+  float: left;
+  padding-top: 100px;
+}
+
+.image2 {
+  float: right;
+  padding-right: 100px;
+}
+
+.text2 {
+  padding-left: 100px;
+}
+
+dl {
+  padding-left: 50px;
+}
+a.list {
+  color: black;
+}
+.text1 {
+  text-align: center;
+  padding-top: 2%;
+  padding-bottom: 5%;
+  padding-right: 10%;
+}
+.welcome {
+  padding-top: 50px;
+  font-size: 60px;
+}
+h1, h2, h3, h4, h5, h6, table, th, td, input, a, p, div {
+  font-family: "Shantell Sans", sans-serif;
+}
