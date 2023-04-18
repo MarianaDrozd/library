@@ -2,6 +2,7 @@
 
 {% block content %}
     <div class="main">
+    <h1 align="center">{% if book.id %}Update{% else %}Create{% endif %} a Book</h1>
         <form action="" method="post">
             {% csrf_token %}
             <table>
