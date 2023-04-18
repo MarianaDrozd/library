@@ -1,11 +1,14 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-  <form action="" method="post">
-    {% csrf_token %}
-    <table>
-    {{ form.as_table }}
-    </table>
-    <input type="submit" value="Submit" />
-  </form>
+    <div class="main">
+        <h1 align="center">{% if author.id %}Update{% else %}Create{% endif %} an Author</h1>
+      <form action="" method="post">
+        {% csrf_token %}
+        <table>
+        {{ form.as_table }}
+        </table>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
 {% endblock %}
